@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Privacy Policy — Moody</title>
+<style>
+  :root { color-scheme: light; }
+  html { background: #FAFAF7; }
+  body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+    color: #1A1A1A;
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, system-ui, sans-serif;
+  }
+  h1 { font-weight: 500; font-size: 32px; letter-spacing: -0.01em; margin: 0 0 8px; }
+  h2 { font-weight: 500; font-size: 18px; margin: 32px 0 8px; }
+  .meta { color: #666; font-size: 14px; margin-bottom: 32px; }
+  ul { padding-left: 20px; }
+  li { margin: 4px 0; }
+  a { color: #1A1A1A; }
+  hr { border: 0; border-top: 1px solid #E5E5E0; margin: 40px 0; }
+  code { background: #F0F0EC; padding: 1px 6px; border-radius: 3px; font-size: 14px; }
+  footer { color: #888; font-size: 13px; margin-top: 48px; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy</h1>
+<p class="meta">Moody · Last updated 14 April 2026</p>
+
+<p>
+  Moody is a web tool that helps interior designers turn their own Pinterest boards
+  into client-ready mood boards. This policy explains what data Moody accesses, what
+  it does with that data, and what it does not do.
+</p>
+
+<h2>1. Who we are</h2>
+<p>
+  "Moody" refers to the web application operated by the project maintainer. For
+  questions about this policy, contact
+  <a href="https://github.com/hessiankiln/moody-privacy/issues">via GitHub issues</a>
+  until a dedicated contact address is published.
+</p>
+
+<h2>2. Data we access</h2>
+<p>
+  When you connect your Pinterest account, Moody uses Pinterest's OAuth 2.0 flow to
+  request the following read-only permissions:
+</p>
+<ul>
+  <li><code>user_accounts:read</code> — your Pinterest username and account metadata, used only to display who is signed in</li>
+  <li><code>boards:read</code> and <code>boards:read_secret</code> — the list of boards you own, including secret boards</li>
+  <li><code>pins:read</code> and <code>pins:read_secret</code> — the pins inside those boards, so you can select images for your mood board</li>
+</ul>
+<p>
+  Moody requests no write permissions. Moody cannot create, edit, or delete anything
+  on your Pinterest account.
+</p>
+
+<h2>3. How your data is used</h2>
+<ul>
+  <li>Boards and pins are fetched on demand and rendered in your authenticated browser session. Images are routed through Moody's server as a CORS-safe proxy so they can be placed on a canvas and exported.</li>
+  <li>The Pinterest access token issued to you is stored only in an encrypted, HTTP-only, server-side session cookie. It is never exposed to JavaScript running in your browser and is never shared with third parties.</li>
+  <li>Moody does not persist your boards, pins, images, or mood board files on a server after your session ends. Exported PDF and JPG files are generated in your browser and downloaded directly to your device.</li>
+</ul>
+
+<h2>4. What we don't do</h2>
+<ul>
+  <li>We do not sell, rent, or share your data with third parties.</li>
+  <li>We do not use third-party advertising networks or cross-site tracking.</li>
+  <li>We do not use analytics services that identify individual users. Aggregate usage telemetry, if introduced in future, will be opt-out and documented here before it ships.</li>
+  <li>We do not redistribute pin images. Pinned images remain the property of their original creators; Moody treats them as private working material for the signed-in user.</li>
+</ul>
+
+<h2>5. Cookies</h2>
+<p>
+  Moody sets a single strictly-necessary session cookie used to keep you signed in
+  and to store the encrypted Pinterest access token server-side. No other cookies
+  are set. The cookie is <code>HttpOnly</code>, <code>Secure</code>, and
+  <code>SameSite=Lax</code>.
+</p>
+
+<h2>6. Your rights and controls</h2>
+<ul>
+  <li>Sign out from the Moody editor at any time; this clears the session cookie and removes the encrypted access token from the server.</li>
+  <li>Revoke Moody's access to your Pinterest account at any time from
+    <a href="https://www.pinterest.com/settings/apps/">Pinterest's connected apps page</a>.
+    Once revoked, Moody can no longer fetch any of your data.</li>
+  <li>Because Moody holds no persistent copy of your boards, pins, or mood boards, there is no long-term personal data for us to export or delete on your behalf; signing out and revoking Pinterest access is the complete removal path.</li>
+</ul>
+
+<h2>7. Children</h2>
+<p>
+  Moody is intended for professional use and is not directed at children under 13.
+  We do not knowingly collect data from children.
+</p>
+
+<h2>8. Changes to this policy</h2>
+<p>
+  If this policy changes, the "Last updated" date above will be revised and a note
+  describing the change will be kept in the repository's commit history.
+</p>
+
+<hr />
+
+<footer>
+  This document is served from a public GitHub repository:
+  <a href="https://github.com/hessiankiln/moody-privacy">hessiankiln/moody-privacy</a>.
+</footer>
+
+</body>
+</html>
